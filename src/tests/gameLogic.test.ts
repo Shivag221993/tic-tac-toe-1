@@ -1,4 +1,4 @@
-import { calculateWinner } from '../common/gameLogic';
+import { calculateWinner, isBoardFull } from '../common/gameLogic';
 import { BoardState } from '../common/types';
 import { PLAYER_X, PLAYER_O } from '../constants';
 
@@ -21,5 +21,10 @@ describe('Tic Tac Toe Pure Logic', () => {
   test('detects a diagonal win for O', () => {
     const board: BoardState = [PLAYER_O, PLAYER_X, PLAYER_X, null, PLAYER_O, null, PLAYER_X, null, PLAYER_O];
     expect(calculateWinner(board)).toEqual({ winner: PLAYER_O, line: [0, 4, 8] });
+  });
+
+  test('correctly identifies when the board is full', () => {
+    const fullBoard: BoardState = [PLAYER_X, PLAYER_O, PLAYER_X, PLAYER_X, PLAYER_O, PLAYER_O, PLAYER_O, PLAYER_X, PLAYER_X];
+    expect(isBoardFull(fullBoard)).toBe(true);
   });
 });

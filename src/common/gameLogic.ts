@@ -16,3 +16,7 @@ export function calculateWinner(squares: BoardState): WinResult | null {
   }
   return null;
 }
+
+export function isBoardFull(squares: BoardState): boolean {
+  return squares.every((square) => square !== null);
+}
