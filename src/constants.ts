@@ -7,5 +7,7 @@ export const STATUS_DRAW = "It's a Draw!";
 
 export const RESET_LABEL = 'Reset Game';
 
+export const SQUARE_LABEL_PREFIX = 'Square ';
+
 export const PLAYER_X = 'X';
 export const PLAYER_O = 'O';
